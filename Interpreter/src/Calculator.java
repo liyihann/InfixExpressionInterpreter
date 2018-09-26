@@ -126,19 +126,6 @@ public class Calculator {
         return '(' == c;
     }
 
-//    public static void main(String[] args) throws Exception {
-//
-//        Calculator p=new Calculator();
-//        Scanner scan = new Scanner(System.in);
-//        System.out.println("请输入算术表达式：   ");
-//        while (scan.hasNext()) {
-//            String str=scan.next();
-//            String postFix=p.conver2Postfix(str);
-//            System.out.println("结果是：    "+p.numberCalculate(postFix));
-//            System.out.println();
-//            System.out.println("请输入算术表达式：   ");
-//        }
-//
-//    }
+
 }
 

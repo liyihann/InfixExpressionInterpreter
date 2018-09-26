@@ -36,6 +36,18 @@ public class GUIForm {
                 textArea2.setText("");
             }
         });
+        analyzeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String str = textArea1.getText();
+                Analyzer a = new Analyzer();
+                a.setExpression(str);
+                a.setToken();
+                a.setDefinition();
+                //textArea2.setText(a.getToken().toString()+"\n"+a.getDefinition().toString());
+                textArea2.setText(a.printAnalysis());
+            }
+        });
     }
 
     public static void main(String[] args) {
