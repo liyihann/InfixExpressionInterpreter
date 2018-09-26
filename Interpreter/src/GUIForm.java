@@ -44,7 +44,6 @@ public class GUIForm {
                 a.setExpression(str);
                 a.setToken();
                 a.setDefinition();
-                //textArea2.setText(a.getToken().toString()+"\n"+a.getDefinition().toString());
                 textArea2.setText(a.printAnalysis());
             }
         });
@@ -54,6 +53,7 @@ public class GUIForm {
         JFrame frame = new JFrame("GUIForm");
         frame.setContentPane(new GUIForm().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(8000,6000);
         frame.pack();
         frame.setVisible(true);
     }
