@@ -40,11 +40,16 @@ public class GUIForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String str = textArea1.getText();
-                Analyzer a = new Analyzer();
-                a.setExpression(str);
-                a.setToken();
-                a.setDefinition();
-                textArea2.setText(a.printAnalysis());
+                Analyzer a = new Analyzer(str);
+
+                //词法分析
+                String lexical = a.printLexicalAnalysis();
+
+
+                //语法分析
+                String syntax = a.printSyntaxAnalysis();
+
+                textArea2.setText(lexical+syntax);
             }
         });
     }
