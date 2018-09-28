@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30eeb05e-e0cc-4085-bd3c-4c61ba7ae571" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/GUIForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/GUIForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/GUIForm.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +22,8 @@
       <file leaf-file-name="Analyzer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="787">
-              <caret line="286" column="13" lean-forward="true" selection-start-line="286" selection-start-column="13" selection-end-line="286" selection-end-column="13" />
+            <state relative-caret-position="2955">
+              <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -30,8 +31,8 @@
       <file leaf-file-name="GUIForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+            <state relative-caret-position="191">
+              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,10 +40,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="GUIForm.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
       <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="59">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
@@ -63,10 +69,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.form" />
         <option value="$PROJECT_DIR$/Interpreter/src/Cal.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/Calculator.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.java" />
+        <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.form" />
         <option value="$PROJECT_DIR$/Interpreter/src/Analyzer.java" />
       </list>
     </option>
@@ -80,10 +86,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="336" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="105" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="1637" />
     <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -167,6 +173,13 @@
             </path>
             <path>
               <item name="InfixExpressionInterpreter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InfixExpressionInterpreter" type="462c0819:PsiDirectoryNode" />
+              <item name="Interpreter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUIForm" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="InfixExpressionInterpreter" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -178,9 +191,9 @@
   <component name="PropertiesComponent">
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="right" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="251" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="79" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="left" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="241" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="423" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -301,15 +314,15 @@
       <workItem from="1538021578415" duration="13000" />
       <workItem from="1538051387581" duration="1176000" />
       <workItem from="1538057393941" duration="10304000" />
-      <workItem from="1538098862842" duration="1149000" />
+      <workItem from="1538098862842" duration="7826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27924000" />
+    <option name="totallyTimeSpent" value="34601000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
+    <frame x="105" y="23" width="1637" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" x="682" y="132" width="129" height="586" id="Palette" order="3" type="FLOATING" />
@@ -321,18 +334,18 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3548611" side_tool="true" weight="0.27453768" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64513886" visible="true" weight="0.110953055" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64513886" weight="0.30014226" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17430556" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26206475" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info x="522" y="195" width="450" height="459" id="UI Designer" order="2" type="WINDOWED" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997155" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3298611" />
@@ -530,9 +543,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/FakeHashMap.java" />
-    <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -553,28 +563,31 @@
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Interpreter/src/AnalyisisCheckCal.java" />
+    <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+        <state relative-caret-position="191">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interpreter/src/AnalyisisCheckCal.java" />
     <entry file="file://$PROJECT_DIR$/Interpreter/src/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="59">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="286" column="13" lean-forward="true" selection-start-line="286" selection-start-column="13" selection-end-line="286" selection-end-column="13" />
+        <state relative-caret-position="2955">
+          <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
         </state>
       </provider>
     </entry>

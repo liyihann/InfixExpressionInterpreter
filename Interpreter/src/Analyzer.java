@@ -9,6 +9,7 @@ public class Analyzer {
     private ArrayList<String> checkedword;
     private ArrayList<Integer> checkedvalue;
     private boolean isLexicalError;
+    private boolean isSyntaxError;
 
     public Analyzer(){}
 
@@ -19,6 +20,7 @@ public class Analyzer {
         this.checkedword = new ArrayList<String>();
         this.checkedvalue = new ArrayList<Integer>();
         this.isLexicalError = false;
+        this.isSyntaxError = false;
     }
 
 
@@ -141,6 +143,17 @@ public class Analyzer {
                 }
                 t++;
             }
+            else if(t==0&&value.size()>=2&&value.get(0)==5&&(value.get(1)==1||value.get(1)==2)){
+                if(value.get(1)==1){
+                    checkedvalue.add(1);
+                    checkedword.add("+"+token.get(1));
+                }
+                if(value.get(1)==2){
+                    checkedvalue.add(2);
+                    checkedword.add("+"+token.get(1));
+                }
+                t++;
+            }
             else if((t+3)<value.size()&&t>0&&value.get(t)==3&&value.get(t+1)==6&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
                 //(
                 checkedvalue.add(3);
@@ -154,7 +167,24 @@ public class Analyzer {
                     checkedvalue.add(2);
                     checkedword.add("-"+token.get(t+2));
                 }
-
+                //）
+                checkedvalue.add(4);
+                checkedword.add(")");
+                t+=3;
+            }
+            else if((t+3)<value.size()&&t>0&&value.get(t)==3&&value.get(t+1)==5&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
+                //(
+                checkedvalue.add(3);
+                checkedword.add("(");
+                //负数
+                if(value.get(t+2)==1){
+                    checkedvalue.add(1);
+                    checkedword.add("+"+token.get(t+2));
+                }
+                if(value.get(t+2)==2){
+                    checkedvalue.add(2);
+                    checkedword.add("+"+token.get(t+2));
+                }
                 //）
                 checkedvalue.add(4);
                 checkedword.add(")");
@@ -215,7 +245,7 @@ public class Analyzer {
             str+="\n";
         }
         if(!isLexicalError){
-            str+="-----词法分析通过-----\n";
+            str+="-----词法分析结束-----\n\n";
         }
         return str;
     }
@@ -229,26 +259,42 @@ public class Analyzer {
     int error=0;
     //获得下一个token的种类编码
     public void Next(){
-
         if(idex<checkedvalue.size()){
             symbol=checkedvalue.get(idex);
             idex++;
         }
-        else
+        else{
             symbol=0;
+        }
+
     }
     // E->T{+T|-T}
     public void E(){
+        System.out.println("E->T");
         T();
         while(symbol==5||symbol==6){
+            if(symbol==5){
+                System.out.println("E->T+T");
+            }
+            if(symbol==6){
+                System.out.println("E->T-T");
+            }
             Next();
             T();
         }
+
     }
     //T->F{*F|/F}
     public void T(){
+        System.out.println("T->F");
         F();
         while(symbol==7||symbol==8){
+            if(symbol==7){
+                System.out.println("T->F*F");
+            }
+            if(symbol==8){
+                System.out.println("T->F/F");
+            }
             Next();
             F();
         }
@@ -256,9 +302,11 @@ public class Analyzer {
     //F->(E)|d
     public void F(){
         if(symbol==1||symbol==2){
+            System.out.println("F->d:"+checkedword.get(idex-1));
             Next();
         }
         else if(symbol==3){
+            System.out.println("F->(E)");
             Next();
             E();
             if(symbol==4){
@@ -266,30 +314,30 @@ public class Analyzer {
             }
             else{
                 error=-1;
-                System.out.println("第"+(idex)+"词法单元错误");
+                System.out.println("F():第"+(idex)+"词法单元错误");
             }
         }
         else{
             error=-1;
-            System.out.println("第"+(idex)+"词法单元错误");
+            System.out.println("F()2:第"+(idex)+"词法单元错误");
         }
     }
     public String printSyntaxAnalysis(){
         if(isLexicalError){
             return "【提示：词法分析错误，无法进行语法分析】";
         }
-        String str = "-----语法分析开始-----\n";
+        String str = "-----语法检查开始-----\n";
 
         Next();
         E();
         if(symbol==0&&error==0){
-            str+="-----语法分析通过-----\n";
+            str+="-----语法检查结束-----\n\n";
         }
         else{
             if(symbol!=0){
                 str=str+"第"+idex+"词法单元错误";
             }
-            str+="【提示：语法分析错误，无法计算】";
+            str+="【提示：语法检查错误，无法分析】";
         }
         return str;
 

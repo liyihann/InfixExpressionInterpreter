@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 
 public class GUIForm {
     private JTextArea textArea1;
@@ -12,6 +13,7 @@ public class GUIForm {
     private JButton calculateButton;
     private JButton clearButton;
     private JPanel panel4;
+    private JScrollPane scrollPane1;
 
     public GUIForm() {
         calculateButton.addActionListener(new ActionListener() {
@@ -58,8 +60,9 @@ public class GUIForm {
         JFrame frame = new JFrame("GUIForm");
         frame.setContentPane(new GUIForm().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(8000,6000);
         frame.pack();
+        frame.setSize(600,400);
         frame.setVisible(true);
     }
+
 }
