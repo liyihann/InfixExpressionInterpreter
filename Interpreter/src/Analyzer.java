@@ -125,13 +125,58 @@ public class Analyzer {
 
         }
     }
+
+    public void checkMinus(){
+        int t;
+        for(t=0;t<value.size();t++){
+            //-5...
+            if(t==0&&value.size()>=2&&value.get(0)==6&&(value.get(1)==1||value.get(1)==2)){
+                if(value.get(1)==1){
+                    checkedvalue.add(1);
+                    checkedword.add("-"+token.get(1));
+                }
+                if(value.get(1)==2){
+                    checkedvalue.add(2);
+                    checkedword.add("-"+token.get(1));
+                }
+                t++;
+            }
+            else if((t+3)<value.size()&&t>0&&value.get(t)==3&&value.get(t+1)==6&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
+                //(
+                checkedvalue.add(3);
+                checkedword.add("(");
+                //负数
+                if(value.get(t+2)==1){
+                    checkedvalue.add(1);
+                    checkedword.add("-"+token.get(t+2));
+                }
+                if(value.get(t+2)==2){
+                    checkedvalue.add(2);
+                    checkedword.add("-"+token.get(t+2));
+                }
+
+                //）
+                checkedvalue.add(4);
+                checkedword.add(")");
+                t+=3;
+            }
+            else {
+                checkedvalue.add(value.get(t));
+                checkedword.add(token.get(t));
+            }
+        }
+    }
+
+    //整数：1 || 浮点数：2 || (：3 || )：4 || +：5 || -：6 || *：7 || /：8 || ^：9 || %：10
+
     public String printLexicalAnalysis(){
         setToken();
         setValue();
+        checkMinus();
         String str = "-----词法分析开始-----\n";
-        for(int i = 0;i<token.size();i++){
-            str+=token.get(i)+":";
-            switch (value.get(i)){
+        for(int i = 0;i<checkedword.size();i++){
+            str+=checkedword.get(i)+":";
+            switch (checkedvalue.get(i)){
                 case 1:
                     str+="整数";
                     break;
@@ -174,7 +219,7 @@ public class Analyzer {
         }
         return str;
     }
-//整数：1 || 浮点数：2 || (：3 || )：4 || +：5 || -：6 || *：7 || /：8 || ^：9 || %：10
+
 
     //文法：E->E+T|E-T|T  T->T*F|T/F|F F->(E)|d
     //语法分析
@@ -182,47 +227,6 @@ public class Analyzer {
     int idex=0;
     int symbol;
     int error=0;
-
-    public void checkMinus(){
-        int t;
-        for(t=0;t<value.size();t++){
-            //-5...
-            if(t==0&&value.size()>=2&&value.get(0)==6&&(value.get(1)==1||value.get(1)==2)){
-                if(value.get(1)==1){
-                    checkedvalue.add(1);
-                    checkedword.add("-"+token.get(1));
-                }
-                if(value.get(1)==2){
-                    checkedvalue.add(2);
-                    checkedword.add("-"+token.get(1));
-                }
-                t++;
-            }
-            else if((t+3)<value.size()&&t>0&&value.get(t)==3&&value.get(t+1)==6&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
-                //(
-                checkedvalue.add(3);
-                checkedword.add("(");
-                //负数
-                if(value.get(t+2)==1){
-                    checkedvalue.add(1);
-                    checkedword.add("-"+token.get(t+2));
-                }
-                if(value.get(t+2)==2){
-                    checkedvalue.add(2);
-                    checkedword.add("-"+token.get(t+2));
-                }
-
-                //）
-                checkedvalue.add(4);
-                checkedword.add(")");
-                t+=3;
-            }
-            else {
-                checkedvalue.add(value.get(t));
-                checkedword.add(token.get(t));
-            }
-        }
-    }
     //获得下一个token的种类编码
     public void Next(){
 
@@ -270,17 +274,12 @@ public class Analyzer {
             System.out.println("第"+(idex)+"词法单元错误");
         }
     }
-
     public String printSyntaxAnalysis(){
         if(isLexicalError){
             return "【提示：词法分析错误，无法进行语法分析】";
         }
-
         String str = "-----语法分析开始-----\n";
-        checkMinus();
-        for(int i = 0;i<checkedword.size();i++){
-            str+=checkedword.get(i)+":"+checkedvalue.get(i)+"\n";
-        }
+
         Next();
         E();
         if(symbol==0&&error==0){
