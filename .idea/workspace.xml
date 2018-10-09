@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30eeb05e-e0cc-4085-bd3c-4c61ba7ae571" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/GUIForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/GUIForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/Analyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/Analyzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/GUIForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/GUIForm.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,20 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Analyzer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Analyzer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2955">
-              <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+            <state relative-caret-position="4755">
+              <caret line="317" column="39" selection-start-line="317" selection-start-column="39" selection-end-line="317" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIForm.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUIForm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+            <state relative-caret-position="125">
+              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,8 +55,14 @@
       <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="135">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+              <folding>
+                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#326#327#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,6 +76,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>println</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -70,10 +88,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Interpreter/src/Cal.java" />
-        <option value="$PROJECT_DIR$/Interpreter/src/Calculator.java" />
-        <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.form" />
+        <option value="$PROJECT_DIR$/Interpreter/src/Calculator.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/Analyzer.java" />
+        <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.java" />
       </list>
     </option>
   </component>
@@ -86,10 +104,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="105" />
-    <option name="y" value="23" />
-    <option name="width" value="1637" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="36" />
+    <option name="width" value="1440" />
     <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -145,9 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,19 +187,15 @@
             </path>
             <path>
               <item name="InfixExpressionInterpreter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InfixExpressionInterpreter" type="462c0819:PsiDirectoryNode" />
-              <item name="Interpreter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUIForm" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="InfixExpressionInterpreter" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -315,15 +325,20 @@
       <workItem from="1538051387581" duration="1176000" />
       <workItem from="1538057393941" duration="10304000" />
       <workItem from="1538098862842" duration="7826000" />
+      <workItem from="1538389909273" duration="262000" />
+      <workItem from="1539092985116" duration="375000" />
+      <workItem from="1539094076311" duration="2141000" />
+      <workItem from="1539096354921" duration="1552000" />
+      <workItem from="1539099890810" duration="2330000" />
+      <workItem from="1539103256513" duration="611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34601000" />
+    <option name="totallyTimeSpent" value="41872000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="105" y="23" width="1637" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="1" y="23" width="1440" height="809" extended-state="6" />
     <layout>
       <window_info anchor="right" x="682" y="132" width="129" height="586" id="Palette" order="3" type="FLOATING" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -334,12 +349,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3548611" side_tool="true" weight="0.27453768" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64513886" weight="0.30014226" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64513886" weight="0.40308988" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26206475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17777778" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -347,8 +362,8 @@
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997155" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3298611" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -364,17 +379,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9090">
-          <caret line="657" selection-start-line="657" selection-end-line="657" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -567,27 +575,34 @@
     <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
+    <entry file="file://$PROJECT_DIR$/Interpreter/src/BACKUP_Calculator" />
+    <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="4755">
+          <caret line="317" column="39" selection-start-line="317" selection-start-column="39" selection-end-line="317" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="135">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
+    <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2955">
-          <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+        <state relative-caret-position="125">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

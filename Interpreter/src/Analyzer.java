@@ -154,7 +154,7 @@ public class Analyzer {
                 }
                 t++;
             }
-            else if((t+3)<value.size()&&t>0&&value.get(t)==3&&value.get(t+1)==6&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
+            else if((t+3)<value.size()&&value.get(t)==3&&value.get(t+1)==6&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
                 //(
                 checkedvalue.add(3);
                 checkedword.add("(");
@@ -172,7 +172,7 @@ public class Analyzer {
                 checkedword.add(")");
                 t+=3;
             }
-            else if((t+3)<value.size()&&t>0&&value.get(t)==3&&value.get(t+1)==5&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
+            else if((t+3)<value.size()&&value.get(t)==3&&value.get(t+1)==5&&(value.get(t+2)==1||value.get(t+2)==2)&&value.get(t+3)==4){
                 //(
                 checkedvalue.add(3);
                 checkedword.add("(");
@@ -245,7 +245,7 @@ public class Analyzer {
             str+="\n";
         }
         if(!isLexicalError){
-            str+="-----词法分析结束-----\n\n";
+            str+="-----词法分析正确-----\n";
         }
         return str;
     }
@@ -257,6 +257,7 @@ public class Analyzer {
     int idex=0;
     int symbol;
     int error=0;
+    String syntaxAnalysis = "";
     //获得下一个token的种类编码
     public void Next(){
         if(idex<checkedvalue.size()){
@@ -270,30 +271,30 @@ public class Analyzer {
     }
     // E->T{+T|-T}
     public void E(){
-        System.out.println("E->T");
+        syntaxAnalysis+="E->T";
         T();
         while(symbol==5||symbol==6){
             if(symbol==5){
-                System.out.println("E->T+T");
+                syntaxAnalysis+="\nE->E+T";
             }
             if(symbol==6){
-                System.out.println("E->T-T");
+                syntaxAnalysis+="\nE->E-T";
             }
             Next();
             T();
-        }
 
+        }
     }
     //T->F{*F|/F}
     public void T(){
-        System.out.println("T->F");
+        syntaxAnalysis+="\nT->F";
         F();
         while(symbol==7||symbol==8){
             if(symbol==7){
-                System.out.println("T->F*F");
+                syntaxAnalysis+="\nT->T*F";
             }
             if(symbol==8){
-                System.out.println("T->F/F");
+                syntaxAnalysis+="\nT->T/F";
             }
             Next();
             F();
@@ -302,11 +303,19 @@ public class Analyzer {
     //F->(E)|d
     public void F(){
         if(symbol==1||symbol==2){
-            System.out.println("F->d:"+checkedword.get(idex-1));
+            syntaxAnalysis+="\nF->d:"+checkedword.get(idex-1);
+            if(idex<checkedvalue.size()){
+                syntaxAnalysis+="\n向后一个操作数移动";
+            }
+            else{
+                syntaxAnalysis+="\n读取完毕";
+            }
+
             Next();
+
         }
         else if(symbol==3){
-            System.out.println("F->(E)");
+            syntaxAnalysis+="\nF->(E)";
             Next();
             E();
             if(symbol==4){
@@ -314,13 +323,14 @@ public class Analyzer {
             }
             else{
                 error=-1;
-                System.out.println("F():第"+(idex)+"词法单元错误");
+                syntaxAnalysis+="\n第"+(idex)+"词法单元错误";
             }
         }
         else{
             error=-1;
-            System.out.println("F()2:第"+(idex)+"词法单元错误");
+            syntaxAnalysis+="\n第"+(idex)+"词法单元错误";
         }
+
     }
     public String printSyntaxAnalysis(){
         if(isLexicalError){
@@ -330,14 +340,15 @@ public class Analyzer {
 
         Next();
         E();
+        str+=syntaxAnalysis;
         if(symbol==0&&error==0){
-            str+="-----语法检查结束-----\n\n";
+            str+="\n-----语法检查正确-----\n\n";
         }
         else{
             if(symbol!=0){
-                str=str+"第"+idex+"词法单元错误";
+                str=str+"\n第"+idex+"词法单元错误";
             }
-            str+="【提示：语法检查错误，无法分析】";
+            str+="\n【提示：语法检查错误，无法分析】";
         }
         return str;
 

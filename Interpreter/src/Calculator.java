@@ -3,129 +3,130 @@ import java.util.*;
 
 public class Calculator {
 
+    private static Stack<Integer> stackN = new Stack<Integer>();// 数字
+    private static Stack<Character> stackF = new Stack<Character>();// 符号
+    private static Stack<Character> stackZ = new Stack<Character>();// 中间
 
-    public String conver2Postfix(String expression) throws Exception {
-        Stack st = new Stack();
-        String postFix = "";
-        for (int i = 0; expression != null && i < expression.length(); i++) {
-            char c = expression.charAt(i);
-            if (' ' != c) {
-                if (isOpenParenthesis(c)) {
-                    // 左括号就入栈
-                    st.push(c);
-                } else if (isCloseParenthesis(c)) {// 右括号
+    public static char[] getCh() {
+        return ch;
+    }
 
-                    Character ac = (Character) st.pop();
-                    while (!isOpenParenthesis(ac)) {
-                        postFix += ac.toString();
-                        ac = (Character) st.pop();
+    public static void setCh(char[] ch) {
+        Calculator.ch = ch;
+    }
+
+    private static char [] ch;
+    private static char [] ch1;
+    private static int [] num = new int[10];
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String str = in.next();
+        ch = str.toCharArray();
+        //使用方法
+        int result = numberCalculate(convert2Postfix(ch));
+        System.out.println(result);
+        in.close();
+    }
+
+
+    public static int priority(char c){//优先级
+        if(c == ')'){
+            return 1;
+        }else if(c == '+' || c == '-'){
+            return 2;
+        }else if(c == '*' || c == '/'){
+            return 3;
+        }else if(c == '('){
+            return 4;
+        }
+        return 999;
+    }
+
+    public static int operation(int a, int b, char c){// 计算方法
+        if(c == '+'){
+            return a + b;
+        }else if(c == '-'){
+            return b - a;
+        }else if(c == '*'){
+            return a * b;
+        }else if(c == '/' && a != 0){
+            return b / a;
+        }
+        return -1;
+    }
+
+    public static char[] convert2Postfix(char [] ch){
+        int n = ch.length;
+        String str = "";
+        for(int i = 0; i < n; i++){
+            if(ch[i] >= '0' && ch[i] <= '9'){// 数字
+                if(i + 1 < n && (ch[i+1] < '0' || ch[i+1] > '9') || i + 1 == n){// 如果一个数字的后面是运算符
+                    stackZ.push(ch[i]);
+                    stackZ.push('#');
+                }else{// 数字的情况
+                    stackZ.push(ch[i]);
+                }
+            }else{// 运算符
+                if(stackF.isEmpty() || ch[i]=='(' || priority(ch[i]) > priority(stackF.peek())){
+                    stackF.push(ch[i]);
+                }else if(ch[i] == ')'){// 当是右括号的时候
+                    while(stackF.peek() != '('){
+                        stackZ.push(stackF.pop());
                     }
-                } else if (isOperator(c)) {// 操作符
-
-                    if (!st.isEmpty()) {
-                        Character ac = (Character) st.pop();
-                        while (ac != null
-                                && priority(ac.charValue()) > priority(c)) {
-                            postFix += ac;
-                            ac = (Character) st.pop();
-
-                        }
-
-                        if (ac != null) {
-                            st.push(ac);
-                        }
+                    stackF.pop();
+                }else{// 优先级低于栈顶运算符的时候
+                    while(!stackF.isEmpty() && priority(ch[i]) <= priority(stackF.peek()) && stackF.peek() != '('){
+                        stackZ.push(stackF.pop());
                     }
-                    // 运算符入栈
-                    st.push(c);
-                } else {// 后缀表达式
-                    postFix += c;
+                    stackF.push(ch[i]);
                 }
             }
         }
-
-        while (!st.isEmpty()) {
-            postFix += st.pop().toString();
+        while(!stackF.isEmpty()){
+            stackZ.push(stackF.pop());
         }
-        return postFix;
+        while(!stackZ.isEmpty()){
+            str += stackZ.pop()+"";
+        }
+        ch1 = str.toCharArray();
+        int a = ch1.length;
+        for(int i = 0; i < a/2; i++){//  ch1反转
+            char t;
+            t = ch1[i];
+            ch1[i] = ch1[a-1-i];
+            ch1[a-1-i] = t;
+        }
+        return ch1;
     }
 
 
-    public double numberCalculate(String postFix) throws Exception {
-        Stack st = new Stack();// 操作数栈
-        for (int i = 0; i < postFix.length(); i++) {
-            char c = postFix.charAt(i);
-            if (isOperator(c)) {
-                double d2 = Double.valueOf(st.pop().toString());
-                double d1 = Double.valueOf(st.pop().toString());
-                double d3 = 0;
-                switch (c) {
-                    case '+':
-                        d3=d1+d2;
-                        break;
-                    case '-':
-                        d3=d1-d2;
-                        break;
-                    case '*':
-                        d3=d1*d2;
-                        break;
-                    case '/':
-                        d3=d1/d2;
-                        break;
-                    case '%':
-                        d3=d1%d2;
-                        break;
-                    case '^':
-                        d3=Math.pow(d1, d2);
-                        break;
-
-                    default:
-                        break;
+    public static int numberCalculate(char [] ch){// 计算后缀表达式
+        int n = ch.length;
+        int sum = 0;
+        int k = 0;
+        int tmp = 0;
+        for(int i = 0; i < n; i++){
+            if(ch[i] == '#'){
+                continue;
+            }else if(ch[i] == '+' || ch[i] == '-' || ch[i] == '*' || ch[i] == '/'){// 如果是运算符，则弹出连个数字进行运算
+                sum = operation(stackN.pop(), stackN.pop(), ch[i]);
+                stackN.push(sum);
+            }else{// 如果是数字
+                if(ch[i+1] == '#'){// 如果下一个是‘#’
+                    num[k++] = ch[i] - '0';
+                    for(int j = 0; j < k; j++){
+                        tmp += (num[j] * (int)Math.pow(10, k-j-1));
+                    }
+                    stackN.push(tmp);
+                    tmp = 0;
+                    k = 0;
+                }else{// 下一个元素是数字
+                    num[k++] = ch[i] - '0';
                 }
-
-                st.push(d3);//将操作后的结果入栈
-            }else{//当是操作数时，就直接进操作数栈
-                st.push(c);
             }
-
         }
-
-        return (double) st.pop();
+        return stackN.peek();
     }
-
-    private int priority(char c) {
-        switch (c) {
-            case '^':
-                return 3;
-            case '*':
-            case '/':
-            case '%':
-                return 2;
-            case '+':
-            case '-':
-                return 1;
-        }
-        return 0;
-    }
-
-
-    private boolean isOperator(char c) {
-        if ('+' == c || '-' == c || '*' == c || '/' == c || '^' == c
-                || '%' == c) {
-            return true;
-        }
-        return false;
-    }
-
-
-    private boolean isCloseParenthesis(char c) {
-        return ')' == c;
-    }
-
-
-    private boolean isOpenParenthesis(char c) {
-        return '(' == c;
-    }
-
-
 }
 

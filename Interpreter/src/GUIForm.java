@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.util.Scanner;
 
 public class GUIForm {
     private JTextArea textArea1;
@@ -19,16 +20,28 @@ public class GUIForm {
         calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String result = "";
                 String str = textArea1.getText();
-
-                Calculator p = new Calculator();
-                try {
-                    String postFix = p.conver2Postfix(str);
-                    textArea2.setText("计算结果为:" + p.numberCalculate(postFix));
-                } catch (Exception ex) {
-                    textArea2.setText("【提示：计算异常】");
-                    ex.printStackTrace();
+                if(!str.equals("")){
+                    if(str.contains(" ")){
+                        result+="【提示：字符间有空格，已自动删除。】\n";
+                    }
+                    str = str.replaceAll(" ","");
+                    Calculator p = new Calculator();
+                    try {
+                        p.setCh(str.toCharArray());
+                        result+="计算结果为:";
+                        result+= p.numberCalculate(p.convert2Postfix(p.getCh()));
+                        textArea2.setText(result);
+                    } catch (Exception ex) {
+                        textArea2.setText("【提示：计算异常，请查看分析结果】");
+                        ex.printStackTrace();
+                    }
                 }
+                else {
+                    textArea2.setText("【提示：输入为空】");
+                }
+
             }
         });
         clearButton.addActionListener(new ActionListener() {
@@ -41,17 +54,24 @@ public class GUIForm {
         analyzeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String result = "";
                 String str = textArea1.getText();
-                Analyzer a = new Analyzer(str);
+                if(!str.equals("")){
+                    if(str.contains(" ")){
+                        result+="【提示：字符间有空格，已自动删除。】\n";
+                    }
+                    str = str.replaceAll(" ","");
+                    Analyzer a = new Analyzer(str);
+                    //词法分析
+                    result+= a.printLexicalAnalysis();
+                    //语法分析
+                    result+= a.printSyntaxAnalysis();
+                    textArea2.setText(result);
+                }
+                else{
+                    textArea2.setText("【提示：输入为空】");
+                }
 
-                //词法分析
-                String lexical = a.printLexicalAnalysis();
-
-
-                //语法分析
-                String syntax = a.printSyntaxAnalysis();
-
-                textArea2.setText(lexical+syntax);
             }
         });
     }
