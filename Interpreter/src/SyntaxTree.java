@@ -2,12 +2,10 @@ import java.util.*;
 
 public class SyntaxTree {
     private ArrayList<String> checkedword;
-    private ArrayList<Integer> checkedvalue;
 
     public SyntaxTree(){}
 
     public SyntaxTree(SyntaxAnalyzer s) {
-        this.checkedvalue = s.getValue();
         this.checkedword = s.getWord();
     }
 
@@ -20,18 +18,18 @@ public class SyntaxTree {
     /**
      * 将算术表达式转化成二叉树
      *
-     * @param expression
+     * @param words
      *            为了方便，使用字符串数组来存储表达式
      * @return 二叉树的根节点
      */
-    public static TreeNode createBinaryTree(String[] expression) {
+    public TreeNode createBinaryTree(String[] words) {
 
         // 存储操作数的栈
         Stack<String> opStack = new Stack<String>();
         // 存储转换后的逆波兰式的队列
         Queue<String> reversePolish = new LinkedList<String>();
 
-        for (String s : expression) {
+        for (String s : words) {
 
             // 如果是数字
             if(isDigit(s)){
@@ -70,11 +68,11 @@ public class SyntaxTree {
                             opStack.push(s);
                             break;
                             //如果栈顶元素优先级大于s
-                        }else if(isGreat(opStack.peek(), s)){
+                        }else if(isGreater(opStack.peek(), s)){
 
                             reversePolish.offer(opStack.pop());
 
-                        }else if(isGreat(s, opStack.peek())){
+                        }else if(isGreater(s, opStack.peek())){
 
                             opStack.push(s);
                             break;
@@ -117,20 +115,19 @@ public class SyntaxTree {
             }
 
         }
-
         return nodeStack.pop();
     }
 
     /**
-     * 判断是否为运算符（暂时只判断四则运算的运算符）
+     * 判断是否为运算符
      *
      * @param s
      * @return
      */
-    static boolean isOperator(String s) {
+    public boolean isOperator(String s) {
 
         if ("(".equals(s) || ")".equals(s) || "+".equals(s) || "-".equals(s)
-                || "*".equals(s) || "/".equals(s))
+                || "*".equals(s) || "/".equals(s)||"%".equals(s)||"^".equals(s))
 
             return true;
 
@@ -141,31 +138,28 @@ public class SyntaxTree {
 
     /**
      * 判断是否为数字
+     * 由于checkedword已经检查过，非operator的均为数字
      *
      * @param s
      * @return
      */
-    static boolean isDigit(String s) {
+    public boolean isDigit(String s) {
 
-        for (int i = 0; i < s.length(); i++) {
-
-            if (!Character.isDigit(s.charAt(i)))
-
-                return false;
-        }
+        if(isOperator(s))
+            return false;
 
         return true;
     }
 
     /**
-     * 判断op1和op2的优先级，如果op1>op2，返回true，如果op1<=op2，返回false
+     * 判断op1和op2的优先级，如果op1>=op2，返回true，如果op1<op2，返回false
      *
      * @param op1
      * @param op2
      * @return
      */
-    static boolean isGreat(String op1, String op2) {
-        if (getPriority(op1) > getPriority(op2))
+    public boolean isGreater(String op1, String op2) {
+        if (getPriority(op1) >= getPriority(op2))
             return true;
         else
             return false;
@@ -177,18 +171,12 @@ public class SyntaxTree {
      * @param op
      * @return
      */
-    static int getPriority(String op) {
-
+    public int getPriority(String op) {
         if ("+".equals(op) || "-".equals(op))
-
             return 1;
-
         else if ("*".equals(op) || "/".equals(op))
-
             return 2;
-
         else
-
             throw new IllegalArgumentException("Unsupported operator!");
     }
 
@@ -196,7 +184,7 @@ public class SyntaxTree {
      * 打印出还原的算术表达式
      * @param root
      */
-    static String printMathExpression(TreeNode root){
+    public String printMathExpression(TreeNode root){
         String str = "";
         if(root != null){
             if(isOperator(root.value)){
@@ -213,7 +201,7 @@ public class SyntaxTree {
     }
 
     //层序遍历二叉树
-    static String levelOrder(TreeNode Node) {
+    public String levelOrder(TreeNode Node) {
         String str = "";
         if (Node == null) {
             return str;
@@ -226,7 +214,7 @@ public class SyntaxTree {
         return str;
     }
 
-    static String levelOrder(TreeNode Node, int level) {
+    public String levelOrder(TreeNode Node, int level) {
         String str = "";
         if (Node == null || level < 1) {
             if(Node == null){
@@ -245,7 +233,7 @@ public class SyntaxTree {
         return str;
     }
 
-    static int depth(TreeNode Node) {
+    public int depth(TreeNode Node) {
         if (Node == null) {
             return 0;
         }
@@ -261,12 +249,13 @@ public class SyntaxTree {
     public String printSyntaxTree(){
         String str = "-----打印语法树-----\n";
         int size=this.checkedword.size();
-        String[] array = this.checkedword.toArray(new String[size]);
-        TreeNode root = createBinaryTree(array);
+        String[] words = this.checkedword.toArray(new String[size]);
+        TreeNode root = createBinaryTree(words);
         str+=printMathExpression(root);
         str+="\n\n";
         str+=levelOrder(root);
         str+= "-----语法树打印完成-----\n";
+
         return str;
     }
 
