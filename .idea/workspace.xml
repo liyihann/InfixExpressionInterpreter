@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="30eeb05e-e0cc-4085-bd3c-4c61ba7ae571" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/GUIForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/GUIForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIForm.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUIForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="102" column="60" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
+            <state relative-caret-position="150">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,18 +51,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SyntaxTree.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SyntaxTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="252" selection-start-line="252" selection-end-line="252" />
+            <state relative-caret-position="92">
+              <caret line="228" column="21" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="21" />
               <folding>
                 <element signature="e#158#159#0" expanded="true" />
                 <element signature="e#204#205#0" expanded="true" />
                 <element signature="e#657#665#0" expanded="true" />
                 <element signature="e#746#754#0" expanded="true" />
                 <element signature="e#2481#2491#0" expanded="true" />
-                <marker date="1541424894965" expanded="true" signature="6131:6308" ph="..." />
+                <marker date="1541428753150" expanded="true" signature="6790:6967" ph="..." />
               </folding>
             </state>
           </provider>
@@ -108,6 +109,12 @@
       <find>isOperator</find>
       <find>getP</find>
       <find>isGreat</find>
+      <find>depth</find>
+      <find>Node.value</find>
+      <find>leftChil</find>
+      <find>nodeLevel</find>
+      <find>value</find>
+      <find>new TreeNode</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,8 +129,8 @@
         <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.form" />
         <option value="$PROJECT_DIR$/Interpreter/src/Analyzer.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/SyntaxAnalyzer.java" />
-        <option value="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.java" />
+        <option value="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" />
       </list>
     </option>
   </component>
@@ -136,9 +143,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="221" />
-    <option name="y" value="254" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="197" />
+    <option name="y" value="23" />
     <option name="width" value="1395" />
     <option name="height" value="877" />
   </component>
@@ -370,15 +377,15 @@
       <workItem from="1541345224668" duration="2041000" />
       <workItem from="1541347297614" duration="15000" />
       <workItem from="1541347389398" duration="200000" />
-      <workItem from="1541421535009" duration="3542000" />
+      <workItem from="1541421535009" duration="7169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51319000" />
+    <option name="totallyTimeSpent" value="54946000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="24" width="1395" height="877" extended-state="6" />
+    <frame x="197" y="23" width="1395" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" x="682" y="132" width="129" height="586" id="Palette" order="3" type="FLOATING" />
@@ -391,7 +398,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64513886" visible="true" weight="0.41794872" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64513886" visible="true" weight="0.3576923" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -632,27 +639,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="252" selection-start-line="252" selection-end-line="252" />
+        <state relative-caret-position="92">
+          <caret line="228" column="21" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="21" />
           <folding>
             <element signature="e#158#159#0" expanded="true" />
             <element signature="e#204#205#0" expanded="true" />
             <element signature="e#657#665#0" expanded="true" />
             <element signature="e#746#754#0" expanded="true" />
             <element signature="e#2481#2491#0" expanded="true" />
-            <marker date="1541424894965" expanded="true" signature="6131:6308" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="102" column="60" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1541428753150" expanded="true" signature="6790:6967" ph="..." />
           </folding>
         </state>
       </provider>

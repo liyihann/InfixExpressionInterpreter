@@ -13,6 +13,7 @@ public class SyntaxTree {
         TreeNode leftChild;
         TreeNode rightChild;
         String value;
+        int nodeLevel;
     }
 
     /**
@@ -98,6 +99,7 @@ public class SyntaxTree {
             // 以当前的元素的值新建一个节点
             TreeNode node = new TreeNode();
             node.value = s;
+            node.nodeLevel=-1;
             // 如果是数字
             if(isDigit(s)){
 
@@ -208,28 +210,44 @@ public class SyntaxTree {
         }
         int depth = depth(Node);
         for (int i = 1; i <= depth; i++) {
-            str+=levelOrder(Node, i);
+            for(int j = 0;j<(Math.pow(2,depth-i)-1);j++){
+                str+="  ";
+            }
+//            System.out.println("i:"+i);
+//            Node.nodeLevel = i;
+//            System.out.println("Node:"+Node.value+",Level:"+Node.nodeLevel);
+            str+=levelOrder(Node, i, depth,i);
             str+="\n";
         }
         return str;
     }
 
-    public String levelOrder(TreeNode Node, int level) {
+    public String levelOrder(TreeNode Node, int level,int depth,int curLevel) {
         String str = "";
         if (Node == null || level < 1) {
             if(Node == null){
-                str+="#" + "  ";
+              str+="#";
+              for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
+                  str+="  ";
+              }
+
             }
             return str;
         }
         if (level == 1) {
-            str+=Node.value + "  ";
+            System.out.println("Nodevalue:"+Node.value+",Level"+curLevel);
+            str+=Node.value;
+            for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
+                str+="  ";
+            }
             return str;
         }
+
         // 左子树
-        str+=levelOrder(Node.leftChild, level - 1);
+        str+=levelOrder(Node.leftChild, level - 1, depth,curLevel);
         // 右子树
-        str+=levelOrder(Node.rightChild, level - 1);
+        str+=levelOrder(Node.rightChild,level - 1, depth,curLevel);
+
         return str;
     }
 
