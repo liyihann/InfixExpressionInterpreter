@@ -95,8 +95,14 @@ public class GUIForm {
                         if(s.isSyntaxError()){
                             result+="【提示：语法分析错误，无法打印语法树。请检查输入】";
                         }else{
-                            SyntaxTree t = new SyntaxTree(s);
-                            result+=t.printSyntaxTree();
+                            try{
+                                SyntaxTree t = new SyntaxTree(s);
+                                result+=t.printSyntaxTree();
+                            }catch (Exception ex){
+                                ex.printStackTrace();
+                                result+="【提示：语法分析错误，无法打印语法树。请检查输入】";
+                            }
+
                         }
                     }
                     textArea2.setText(result);
