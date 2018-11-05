@@ -4,8 +4,6 @@
     <list default="true" id="30eeb05e-e0cc-4085-bd3c-4c61ba7ae571" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/GUIForm$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -54,15 +52,15 @@
       <file leaf-file-name="SyntaxTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="228" column="21" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="21" />
+            <state relative-caret-position="49">
+              <caret line="214" column="13" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
               <folding>
                 <element signature="e#158#159#0" expanded="true" />
                 <element signature="e#204#205#0" expanded="true" />
                 <element signature="e#657#665#0" expanded="true" />
                 <element signature="e#746#754#0" expanded="true" />
                 <element signature="e#2481#2491#0" expanded="true" />
-                <marker date="1541428753150" expanded="true" signature="6790:6967" ph="..." />
+                <marker date="1541429613254" expanded="true" signature="6627:6804" ph="..." />
               </folding>
             </state>
           </provider>
@@ -377,12 +375,12 @@
       <workItem from="1541345224668" duration="2041000" />
       <workItem from="1541347297614" duration="15000" />
       <workItem from="1541347389398" duration="200000" />
-      <workItem from="1541421535009" duration="7169000" />
+      <workItem from="1541421535009" duration="8027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54946000" />
+    <option name="totallyTimeSpent" value="55804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="197" y="23" width="1395" height="877" extended-state="0" />
@@ -651,15 +649,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="228" column="21" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="21" />
+        <state relative-caret-position="49">
+          <caret line="214" column="13" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
           <folding>
             <element signature="e#158#159#0" expanded="true" />
             <element signature="e#204#205#0" expanded="true" />
             <element signature="e#657#665#0" expanded="true" />
             <element signature="e#746#754#0" expanded="true" />
             <element signature="e#2481#2491#0" expanded="true" />
-            <marker date="1541428753150" expanded="true" signature="6790:6967" ph="..." />
+            <marker date="1541429613254" expanded="true" signature="6627:6804" ph="..." />
           </folding>
         </state>
       </provider>

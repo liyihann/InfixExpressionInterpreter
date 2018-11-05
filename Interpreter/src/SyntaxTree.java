@@ -213,9 +213,6 @@ public class SyntaxTree {
             for(int j = 0;j<(Math.pow(2,depth-i)-1);j++){
                 str+="  ";
             }
-//            System.out.println("i:"+i);
-//            Node.nodeLevel = i;
-//            System.out.println("Node:"+Node.value+",Level:"+Node.nodeLevel);
             str+=levelOrder(Node, i, depth,i);
             str+="\n";
         }
@@ -224,16 +221,17 @@ public class SyntaxTree {
 
     public String levelOrder(TreeNode Node, int level,int depth,int curLevel) {
         String str = "";
-        if (Node == null || level < 1) {
-            if(Node == null){
-              str+="#";
-              for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
-                  str+="  ";
-              }
-
+        if (level < 1) {
+            return str;
+        }
+        if(Node == null){
+            str+="#";
+            for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
+                str+="  ";
             }
             return str;
         }
+
         if (level == 1) {
             System.out.println("Nodevalue:"+Node.value+",Level"+curLevel);
             str+=Node.value;
