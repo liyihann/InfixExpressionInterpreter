@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="30eeb05e-e0cc-4085-bd3c-4c61ba7ae571" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -15,52 +17,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/InfixExpressionInterpreter$GUIForm.ic" NAME="GUIForm Coverage Results" MODIFIED="1541474247232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/InfixExpressionInterpreter$AnalyisisCheckCal.ic" NAME="AnalyisisCheckCal Coverage Results" MODIFIED="1538063237735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Analyzer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUIForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SyntaxAnalyzer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxAnalyzer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SyntaxTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="214" column="13" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
+            <state relative-caret-position="210">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="e#158#159#0" expanded="true" />
                 <element signature="e#204#205#0" expanded="true" />
-                <element signature="e#657#665#0" expanded="true" />
-                <element signature="e#746#754#0" expanded="true" />
-                <element signature="e#2481#2491#0" expanded="true" />
-                <marker date="1541429613254" expanded="true" signature="6627:6804" ph="..." />
+                <element signature="e#560#568#0" expanded="true" />
+                <element signature="e#649#657#0" expanded="true" />
+                <element signature="e#2383#2393#0" expanded="true" />
+                <marker date="1541474894539" expanded="true" signature="7178:7407" ph="..." />
               </folding>
             </state>
           </provider>
@@ -69,22 +42,86 @@
       <file leaf-file-name="error.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/error.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3405">
+            <state relative-caret-position="402">
               <caret line="227" column="9" selection-start-line="227" selection-start-column="9" selection-end-line="227" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIForm.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.form">
-          <provider selected="true" editor-type-id="ui-designer" />
+      <file leaf-file-name="Analyzer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1850">
+              <caret line="258" column="5" selection-start-line="258" selection-start-column="5" selection-end-line="258" selection-end-column="5" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1665">
+            <state relative-caret-position="422">
               <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SyntaxAnalyzer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxAnalyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUIForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractButton.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/javax/swing/AbstractButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33300">
+              <caret line="2347" selection-start-line="2347" selection-end-line="2347" />
+              <folding>
+                <element signature="e#83485#83486#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultButtonModel.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/javax/swing/DefaultButtonModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3240">
+              <caret line="258" selection-start-line="258" selection-end-line="258" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicButtonListener.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3255">
+              <caret line="251" selection-start-line="251" selection-end-line="251" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Component.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/awt/Component.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92895">
+              <caret line="6532" selection-start-line="6532" selection-end-line="6532" />
             </state>
           </provider>
         </entry>
@@ -113,6 +150,7 @@
       <find>nodeLevel</find>
       <find>value</find>
       <find>new TreeNode</find>
+      <find>left</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,9 +163,9 @@
         <option value="$PROJECT_DIR$/Interpreter/src/Calculator.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/error.txt" />
         <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.form" />
-        <option value="$PROJECT_DIR$/Interpreter/src/Analyzer.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/SyntaxAnalyzer.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/GUIForm.java" />
+        <option value="$PROJECT_DIR$/Interpreter/src/Analyzer.java" />
         <option value="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" />
       </list>
     </option>
@@ -142,8 +180,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="197" />
-    <option name="y" value="23" />
+    <option name="x" value="208" />
+    <option name="y" value="43" />
     <option name="width" value="1395" />
     <option name="height" value="877" />
   </component>
@@ -200,8 +238,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,13 +266,19 @@
             </path>
             <path>
               <item name="InfixExpressionInterpreter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InfixExpressionInterpreter" type="462c0819:PsiDirectoryNode" />
+              <item name="Interpreter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUIForm" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="InfixExpressionInterpreter" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -375,15 +420,16 @@
       <workItem from="1541345224668" duration="2041000" />
       <workItem from="1541347297614" duration="15000" />
       <workItem from="1541347389398" duration="200000" />
-      <workItem from="1541421535009" duration="8027000" />
+      <workItem from="1541421535009" duration="13727000" />
+      <workItem from="1541470669337" duration="4064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55804000" />
+    <option name="totallyTimeSpent" value="65568000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="197" y="23" width="1395" height="877" extended-state="0" />
+    <frame x="403" y="23" width="1395" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" x="682" y="132" width="129" height="586" id="Palette" order="3" type="FLOATING" />
@@ -395,8 +441,8 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3548611" side_tool="true" weight="0.27453768" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64513886" visible="true" weight="0.37820512" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64513886" visible="true" weight="0.3576923" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -406,8 +452,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info x="522" y="195" width="450" height="459" id="UI Designer" order="2" type="WINDOWED" />
       <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33589745" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997155" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3298611" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -425,30 +471,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interpreter/src/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -606,40 +632,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/AnalyisisCheckCal.java" />
     <entry file="file://$PROJECT_DIR$/Interpreter/src/BACKUP_Calculator" />
-    <entry file="file://$PROJECT_DIR$/Interpreter/src/error.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3405">
-          <caret line="227" column="9" selection-start-line="227" selection-start-column="9" selection-end-line="227" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/javax/swing/AbstractButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33300">
+          <caret line="2347" selection-start-line="2347" selection-end-line="2347" />
+          <folding>
+            <element signature="e#83485#83486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/javax/swing/DefaultButtonModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3240">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3255">
+          <caret line="251" selection-start-line="251" selection-end-line="251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/awt/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92895">
+          <caret line="6532" selection-start-line="6532" selection-end-line="6532" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
+        <state relative-caret-position="422">
           <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/Analyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="1850">
+          <caret line="258" column="5" selection-start-line="258" selection-start-column="5" selection-end-line="258" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interpreter/src/error.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="227" column="9" selection-start-line="227" selection-start-column="9" selection-end-line="227" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
+        <state relative-caret-position="179">
           <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/GUIForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="145">
           <caret line="99" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -649,15 +706,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="214" column="13" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
+        <state relative-caret-position="210">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="e#158#159#0" expanded="true" />
             <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#657#665#0" expanded="true" />
-            <element signature="e#746#754#0" expanded="true" />
-            <element signature="e#2481#2491#0" expanded="true" />
-            <marker date="1541429613254" expanded="true" signature="6627:6804" ph="..." />
+            <element signature="e#560#568#0" expanded="true" />
+            <element signature="e#649#657#0" expanded="true" />
+            <element signature="e#2383#2393#0" expanded="true" />
+            <marker date="1541474894539" expanded="true" signature="7178:7407" ph="..." />
           </folding>
         </state>
       </provider>

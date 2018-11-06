@@ -13,7 +13,6 @@ public class SyntaxTree {
         TreeNode leftChild;
         TreeNode rightChild;
         String value;
-        int nodeLevel;
     }
 
     /**
@@ -99,7 +98,6 @@ public class SyntaxTree {
             // 以当前的元素的值新建一个节点
             TreeNode node = new TreeNode();
             node.value = s;
-            node.nodeLevel=-1;
             // 如果是数字
             if(isDigit(s)){
 
@@ -112,6 +110,7 @@ public class SyntaxTree {
                 TreeNode leftNode = nodeStack.pop();
                 node.leftChild = leftNode;
                 node.rightChild = rightNode;
+
                 // 入栈
                 nodeStack.push(node);
             }
@@ -210,6 +209,7 @@ public class SyntaxTree {
         }
         int depth = depth(Node);
         for (int i = 1; i <= depth; i++) {
+            str+="Line"+i+":    ";
             for(int j = 0;j<(Math.pow(2,depth-i)-1);j++){
                 str+="  ";
             }
@@ -226,25 +226,32 @@ public class SyntaxTree {
         }
         if(Node == null){
             str+="#";
+//            System.out.println("Nodevalue:#,Level:"+level+",curlevel:"+curLevel);
             for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
                 str+="  ";
             }
+          while(level>1){
+                str+="#";
+                System.out.println("Nodevalue:#,Level:"+level+",curlevel:"+curLevel);
+                for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
+                    str+="  ";
+                }
+              level--;
+            }
             return str;
         }
-
         if (level == 1) {
-            System.out.println("Nodevalue:"+Node.value+",Level"+curLevel);
+//            System.out.println("Nodevalue:"+Node.value+",Level"+level+",curlevel:"+curLevel);
             str+=Node.value;
             for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
                 str+="  ";
             }
             return str;
         }
-
         // 左子树
-        str+=levelOrder(Node.leftChild, level - 1, depth,curLevel);
+        str += levelOrder(Node.leftChild, level - 1, depth, curLevel);
         // 右子树
-        str+=levelOrder(Node.rightChild,level - 1, depth,curLevel);
+        str += levelOrder(Node.rightChild,level - 1, depth, curLevel);
 
         return str;
     }
@@ -267,8 +274,10 @@ public class SyntaxTree {
         int size=this.checkedword.size();
         String[] words = this.checkedword.toArray(new String[size]);
         TreeNode root = createBinaryTree(words);
+        str+="使用括号表示：\n";
         str+=printMathExpression(root);
         str+="\n\n";
+        str+="使用树形表示：\n";
         str+=levelOrder(root);
         str+= "-----语法树打印完成-----\n";
 
