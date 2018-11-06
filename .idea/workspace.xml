@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30eeb05e-e0cc-4085-bd3c-4c61ba7ae571" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,15 +21,15 @@
       <file leaf-file-name="SyntaxTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="263" column="24" lean-forward="true" selection-start-line="263" selection-start-column="24" selection-end-line="263" selection-end-column="24" />
+            <state relative-caret-position="512">
+              <caret line="256" column="33" selection-start-line="256" selection-start-column="33" selection-end-line="256" selection-end-column="33" />
               <folding>
                 <element signature="e#158#159#0" expanded="true" />
                 <element signature="e#204#205#0" expanded="true" />
                 <element signature="e#560#568#0" expanded="true" />
                 <element signature="e#649#657#0" expanded="true" />
                 <element signature="e#2383#2393#0" expanded="true" />
-                <marker date="1541477203404" expanded="true" signature="8067:8296" ph="..." />
+                <marker date="1541477353334" expanded="true" signature="8066:8295" ph="..." />
               </folding>
             </state>
           </provider>
@@ -420,15 +418,15 @@
       <workItem from="1541347297614" duration="15000" />
       <workItem from="1541347389398" duration="200000" />
       <workItem from="1541421535009" duration="13727000" />
-      <workItem from="1541470669337" duration="6474000" />
+      <workItem from="1541470669337" duration="6501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67978000" />
+    <option name="totallyTimeSpent" value="68005000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="650" y="23" width="1395" height="877" extended-state="0" />
+    <frame x="-17" y="34" width="1395" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" x="682" y="132" width="129" height="586" id="Palette" order="3" type="FLOATING" />
@@ -705,15 +703,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="263" column="24" lean-forward="true" selection-start-line="263" selection-start-column="24" selection-end-line="263" selection-end-column="24" />
+        <state relative-caret-position="512">
+          <caret line="256" column="33" selection-start-line="256" selection-start-column="33" selection-end-line="256" selection-end-column="33" />
           <folding>
             <element signature="e#158#159#0" expanded="true" />
             <element signature="e#204#205#0" expanded="true" />
             <element signature="e#560#568#0" expanded="true" />
             <element signature="e#649#657#0" expanded="true" />
             <element signature="e#2383#2393#0" expanded="true" />
-            <marker date="1541477203404" expanded="true" signature="8067:8296" ph="..." />
+            <marker date="1541477353334" expanded="true" signature="8066:8295" ph="..." />
           </folding>
         </state>
       </provider>
