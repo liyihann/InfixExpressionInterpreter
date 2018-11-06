@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30eeb05e-e0cc-4085-bd3c-4c61ba7ae571" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/Analyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/SyntaxTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree$TreeNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interpreter/SyntaxTree.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,15 +23,15 @@
       <file leaf-file-name="SyntaxTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="229">
+              <caret line="244" column="25" selection-start-line="244" selection-start-column="25" selection-end-line="244" selection-end-column="25" />
               <folding>
                 <element signature="e#158#159#0" expanded="true" />
                 <element signature="e#204#205#0" expanded="true" />
                 <element signature="e#560#568#0" expanded="true" />
                 <element signature="e#649#657#0" expanded="true" />
                 <element signature="e#2383#2393#0" expanded="true" />
-                <marker date="1541474894539" expanded="true" signature="7178:7407" ph="..." />
+                <marker date="1541476418176" expanded="true" signature="7435:7664" ph="..." />
               </folding>
             </state>
           </provider>
@@ -151,6 +149,7 @@
       <find>value</find>
       <find>new TreeNode</find>
       <find>left</find>
+      <find>test</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,8 +179,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="208" />
-    <option name="y" value="43" />
+    <option name="x" value="402" />
+    <option name="y" value="25" />
     <option name="width" value="1395" />
     <option name="height" value="877" />
   </component>
@@ -421,15 +420,15 @@
       <workItem from="1541347297614" duration="15000" />
       <workItem from="1541347389398" duration="200000" />
       <workItem from="1541421535009" duration="13727000" />
-      <workItem from="1541470669337" duration="4064000" />
+      <workItem from="1541470669337" duration="5569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65568000" />
+    <option name="totallyTimeSpent" value="67073000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="403" y="23" width="1395" height="877" extended-state="0" />
+    <frame x="402" y="25" width="1395" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" x="682" y="132" width="129" height="586" id="Palette" order="3" type="FLOATING" />
@@ -706,15 +705,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter/src/SyntaxTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="229">
+          <caret line="244" column="25" selection-start-line="244" selection-start-column="25" selection-end-line="244" selection-end-column="25" />
           <folding>
             <element signature="e#158#159#0" expanded="true" />
             <element signature="e#204#205#0" expanded="true" />
             <element signature="e#560#568#0" expanded="true" />
             <element signature="e#649#657#0" expanded="true" />
             <element signature="e#2383#2393#0" expanded="true" />
-            <marker date="1541474894539" expanded="true" signature="7178:7407" ph="..." />
+            <marker date="1541476418176" expanded="true" signature="7435:7664" ph="..." />
           </folding>
         </state>
       </provider>

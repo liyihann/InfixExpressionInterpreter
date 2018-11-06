@@ -230,13 +230,22 @@ public class SyntaxTree {
             for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
                 str+="  ";
             }
-          while(level>1){
+            while(level>1){
                 str+="#";
-                System.out.println("Nodevalue:#,Level:"+level+",curlevel:"+curLevel);
                 for(int j = 0;j<(Math.pow(2,(depth+1-curLevel))-1);j++){
                     str+="  ";
                 }
-              level--;
+                for(int t = 2;t<=depth;t++){
+                    System.out.println("t:"+t+",Level:"+level+",curlevel:"+curLevel);
+                    if(level>t) {
+                        str += "#";
+                        System.out.println("Nodevalue:#,Level:" + level + ",curlevel:" + curLevel);
+                        for (int j = 0; j < (Math.pow(2, (depth + 1 - curLevel)) - 1); j++) {
+                            str += "  ";
+                        }
+                    }
+                }
+                level--;
             }
             return str;
         }
