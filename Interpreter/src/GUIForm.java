@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Scanner;
 
 public class GUIForm {
@@ -16,6 +17,25 @@ public class GUIForm {
     private JPanel panel4;
     private JScrollPane scrollPane1;
     private JButton syntaxAnalyzeButton;
+    private JButton a7Button;
+    private JButton button2;
+    private JButton a8Button;
+    private JButton a9Button;
+    private JButton button5;
+    private JButton button6;
+    private JButton a0Button;
+    private JButton a00Button;
+    private JButton a4Button;
+    private JButton a5Button;
+    private JButton a6Button;
+    private JButton button12;
+    private JButton a1Button;
+    private JButton a2Button;
+    private JButton a3Button;
+    private JButton button16;
+    private JButton button17;
+    private JButton deleteButton;
+    private JButton button19;
 
     public GUIForm() {
         calculateButton.addActionListener(new ActionListener() {
@@ -27,7 +47,7 @@ public class GUIForm {
                     if(str.contains(" ")){
                         result+="【提示：字符间有空格，已自动删除。】\n";
                     }
-                    str = str.replaceAll(" ","");
+                    str = str.replaceAll(" |\r|\n|\t","");
                     Calculator p = new Calculator();
                     try {
                         p.setCh(str.toCharArray());
@@ -61,7 +81,7 @@ public class GUIForm {
                     if(str.contains(" ")){
                         result+="【提示：字符间有空格，已自动删除。】\n";
                     }
-                    str = str.replaceAll(" ","");
+                    str = str.replaceAll(" |\r|\n|\t","");
                     Analyzer a = new Analyzer(str);
                     //词法分析
                     result+= a.printLexicalAnalysis();
@@ -110,6 +130,140 @@ public class GUIForm {
                 else{
                     textArea2.setText("【提示：输入为空】\n");
                 }
+            }
+        });
+        a7Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("7");
+            }
+        });
+        a8Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("8");
+            }
+        });
+        a9Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("9");
+            }
+        });
+        a4Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("4");
+            }
+        });
+        a5Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("5");
+            }
+        });
+        a6Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("6");
+            }
+        });
+        a1Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("1");
+            }
+        });
+        a2Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("2");
+            }
+        });
+        a3Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("3");
+            }
+        });
+        a0Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("0");
+            }
+        });
+        a00Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("00");
+            }
+        });
+        button2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("+");
+            }
+        });
+        button5.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("/");
+            }
+        });
+        button6.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append(".");
+            }
+        });
+        button12.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("-");
+            }
+        });
+        button16.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("*");
+            }
+        });
+        button17.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append("(");
+            }
+        });
+        button19.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.append(")");
+            }
+        });
+        deleteButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                String s = textArea1.getText();
+                textArea1.setText(s.substring(0,s.length() - 1));
             }
         });
     }
