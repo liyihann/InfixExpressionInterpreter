@@ -120,6 +120,7 @@ public class SyntaxAnalyzer {
             if(symbol!=0){
                 str=str+"\n【提示：第"+idex+"词法单元错误】";
                 str+="\n【提示：异常符号，请检查输入】";
+                isSyntaxError = true;
             }
             str+="\n【提示：语法检查错误，无法继续分析。请检查输入】\n";
         }

@@ -11,11 +11,11 @@ public class GUIForm {
     private JPanel panel1;
     private JPanel panel2;
     private JPanel panel3;
+    private JPanel panel4;
+    private JScrollPane scrollPane1;
     private JButton analyzeButton;
     private JButton calculateButton;
     private JButton clearButton;
-    private JPanel panel4;
-    private JScrollPane scrollPane1;
     private JButton syntaxAnalyzeButton;
     private JButton a7Button;
     private JButton button2;
@@ -36,6 +36,7 @@ public class GUIForm {
     private JButton button17;
     private JButton deleteButton;
     private JButton button19;
+    private JButton cButton;
 
     public GUIForm() {
         calculateButton.addActionListener(new ActionListener() {
@@ -44,20 +45,37 @@ public class GUIForm {
                 String result = "";
                 String str = textArea1.getText();
                 if(!str.equals("")){
-                    if(str.contains(" ")){
+                    if(str.contains(" ")|str.contains("\r")|str.contains("\n")|str.contains("\t")){
                         result+="【提示：字符间有空格，已自动删除。】\n";
                     }
                     str = str.replaceAll(" |\r|\n|\t","");
-                    Calculator p = new Calculator();
-                    try {
-                        p.setCh(str.toCharArray());
-                        result+="计算结果为:";
-                        result+= p.numberCalculate(p.convert2Postfix(p.getCh()));
-                        textArea2.setText(result);
-                    } catch (Exception ex) {
-                        textArea2.setText("【提示：计算异常，请查看分析结果】\n");
-                        ex.printStackTrace();
+
+                    Analyzer a = new Analyzer(str);
+                    //词法分析
+                    a.printLexicalAnalysis();
+                    if(a.isLexicalError()){
+                        result+="【提示：词法分析错误，无法计算。请检查输入。】\n";
+                    }else{
+                        //语法分析
+                        SyntaxAnalyzer s = new SyntaxAnalyzer(a);
+                        s.printSyntaxAnalysis();
+                        if(s.isSyntaxError()){
+                            result+="\n【提示：语法分析错误，无法计算。请检查输入。】\n";
+                        }else{
+                            try{
+                                Calculator p = new Calculator();
+                                p.setCh(str.toCharArray());
+                                result+="计算结果为:";
+                                result+= p.numberCalculate(p.convert2Postfix(p.getCh()));
+
+                            }catch (Exception ex){
+                                ex.printStackTrace();
+                                result+="\n【提示：计算异常，请查看分析结果。请检查输入】\n";
+                            }
+
+                        }
                     }
+                    textArea2.setText(result);
                 }
                 else {
                     textArea2.setText("【提示：输入为空】\n");
@@ -78,7 +96,7 @@ public class GUIForm {
                 String result = "";
                 String str = textArea1.getText();
                 if(!str.equals("")){
-                    if(str.contains(" ")){
+                    if(str.contains(" ")|str.contains("\r")|str.contains("\n")|str.contains("\t")){
                         result+="【提示：字符间有空格，已自动删除。】\n";
                     }
                     str = str.replaceAll(" |\r|\n|\t","");
@@ -99,7 +117,7 @@ public class GUIForm {
                 String result = "";
                 String str = textArea1.getText();
                 if(!str.equals("")){
-                    if(str.contains(" ")){
+                    if(str.contains(" ")|str.contains("\r")|str.contains("\n")|str.contains("\t")){
                         result+="【提示：字符间有空格，已自动删除。】\n";
                     }
                     str = str.replaceAll(" |\r|\n|\t","");
@@ -107,13 +125,13 @@ public class GUIForm {
                     //词法分析
                     a.printLexicalAnalysis();
                     if(a.isLexicalError()){
-                        result+="【提示：词法分析错误，无法进行语法分析。请检查输入】\n";
+                        result+="【提示：词法分析错误，无法进行语法分析。请检查输入。】\n";
                     }else{
                         //语法分析
                         SyntaxAnalyzer s = new SyntaxAnalyzer(a);
                         result+= s.printSyntaxAnalysis();
                         if(s.isSyntaxError()){
-                            result+="\n【提示：语法分析错误，无法打印语法树。请检查输入】\n";
+                            result+="\n【提示：语法分析错误，无法打印语法树。请检查输入。】\n";
                         }else{
                             try{
                                 SyntaxTree t = new SyntaxTree(s);
@@ -264,6 +282,13 @@ public class GUIForm {
                 super.mouseClicked(e);
                 String s = textArea1.getText();
                 textArea1.setText(s.substring(0,s.length() - 1));
+            }
+        });
+        cButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                textArea1.setText("");
             }
         });
     }
