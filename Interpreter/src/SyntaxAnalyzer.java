@@ -89,7 +89,7 @@ public class SyntaxAnalyzer {
 
         }
         else if(symbol==3){
-            syntaxAnalysis+="\nF->(E)";
+            syntaxAnalysis+="\nF->(E)\n";
             Next();
             E();
             if(symbol==4){
@@ -97,12 +97,14 @@ public class SyntaxAnalyzer {
             }
             else{
                 error=-1;
-                syntaxAnalysis+="\n第"+(idex)+"词法单元错误";
+                syntaxAnalysis+="\n【提示：第"+(idex)+"词法单元错误】";
+                syntaxAnalysis+="\n【提示：括号有误，请检查输入】";
             }
         }
         else{
             error=-1;
-            syntaxAnalysis+="\n第"+(idex)+"词法单元错误";
+            syntaxAnalysis+="\n【提示：第"+(idex)+"词法单元错误】";
+            syntaxAnalysis+="\n【提示：操作符或操作数格式有误，请检查输入】";
         }
 
     }
@@ -116,9 +118,10 @@ public class SyntaxAnalyzer {
         }
         else{
             if(symbol!=0){
-                str=str+"\n第"+idex+"词法单元错误";
+                str=str+"\n【提示：第"+idex+"词法单元错误】";
+                str+="\n【提示：异常符号，请检查输入】";
             }
-            str+="\n【提示：语法检查错误，无法分析】";
+            str+="\n【提示：语法检查错误，无法继续分析。请检查输入】\n";
         }
         return str;
 

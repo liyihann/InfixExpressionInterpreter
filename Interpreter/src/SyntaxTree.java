@@ -186,13 +186,20 @@ public class SyntaxTree {
      * @param root
      */
     public String printMathExpression(TreeNode root){
+        int tmp;
         String str = "";
         if(root != null){
             if(isOperator(root.value)){
                 str+="(";
             }
             str+=printMathExpression(root.leftChild);
+            if(isDigit(root.value)&&(root.value.charAt(0)=='-'||root.value.charAt(0)=='+')){
+                str+="(";
+            }
             str+=root.value;
+            if(isDigit(root.value)&&(root.value.charAt(0)=='-'||root.value.charAt(0)=='+')){
+                str+=")";
+            }
             str+=printMathExpression(root.rightChild);
             if(isOperator(root.value)){
                 str+=")";
@@ -252,6 +259,30 @@ public class SyntaxTree {
                                         str += "#";
                                         for (int j = 0; j < (Math.pow(2, (depth + 1 - curLevel)) - 1); j++) {
                                             str += "  ";
+                                        }
+                                        for(int n = 5;n<=m;n++) {
+                                            if (level > n) {
+                                                str += "#";
+                                                for (int j = 0; j < (Math.pow(2, (depth + 1 - curLevel)) - 1); j++) {
+                                                    str += "  ";
+                                                }
+                                                for(int o = 6;o<=n;o++) {
+                                                    if (level > o) {
+                                                        str += "#";
+                                                        for (int j = 0; j < (Math.pow(2, (depth + 1 - curLevel)) - 1); j++) {
+                                                            str += "  ";
+                                                        }
+                                                        for(int p = 7;p<=o;p++) {
+                                                            if (level > p) {
+                                                                str += "#";
+                                                                for (int j = 0; j < (Math.pow(2, (depth + 1 - curLevel)) - 1); j++) {
+                                                                    str += "  ";
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }

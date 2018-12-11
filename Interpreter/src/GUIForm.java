@@ -35,12 +35,12 @@ public class GUIForm {
                         result+= p.numberCalculate(p.convert2Postfix(p.getCh()));
                         textArea2.setText(result);
                     } catch (Exception ex) {
-                        textArea2.setText("【提示：计算异常，请查看分析结果】");
+                        textArea2.setText("【提示：计算异常，请查看分析结果】\n");
                         ex.printStackTrace();
                     }
                 }
                 else {
-                    textArea2.setText("【提示：输入为空】");
+                    textArea2.setText("【提示：输入为空】\n");
                 }
 
             }
@@ -68,7 +68,7 @@ public class GUIForm {
                     textArea2.setText(result);
                 }
                 else{
-                    textArea2.setText("【提示：输入为空】");
+                    textArea2.setText("【提示：输入为空】\n");
                 }
 
             }
@@ -82,25 +82,25 @@ public class GUIForm {
                     if(str.contains(" ")){
                         result+="【提示：字符间有空格，已自动删除。】\n";
                     }
-                    str = str.replaceAll(" ","");
+                    str = str.replaceAll(" |\r|\n|\t","");
                     Analyzer a = new Analyzer(str);
                     //词法分析
                     a.printLexicalAnalysis();
                     if(a.isLexicalError()){
-                        result+="【提示：词法分析错误，无法进行语法分析。请检查输入】";
+                        result+="【提示：词法分析错误，无法进行语法分析。请检查输入】\n";
                     }else{
                         //语法分析
                         SyntaxAnalyzer s = new SyntaxAnalyzer(a);
                         result+= s.printSyntaxAnalysis();
                         if(s.isSyntaxError()){
-                            result+="【提示：语法分析错误，无法打印语法树。请检查输入】";
+                            result+="\n【提示：语法分析错误，无法打印语法树。请检查输入】\n";
                         }else{
                             try{
                                 SyntaxTree t = new SyntaxTree(s);
                                 result+=t.printSyntaxTree();
                             }catch (Exception ex){
                                 ex.printStackTrace();
-                                result+="【提示：语法分析错误，无法打印语法树。请检查输入】";
+                                result+="\n【提示：语法分析错误，无法打印语法树。请检查输入】\n";
                             }
 
                         }
@@ -108,7 +108,7 @@ public class GUIForm {
                     textArea2.setText(result);
                 }
                 else{
-                    textArea2.setText("【提示：输入为空】");
+                    textArea2.setText("【提示：输入为空】\n");
                 }
             }
         });
