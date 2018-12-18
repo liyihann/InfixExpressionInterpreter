@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class SyntaxTree {
+
+
     private ArrayList<String> checkedword;
 
     public SyntaxTree(){}
@@ -13,6 +15,14 @@ public class SyntaxTree {
         TreeNode leftChild;
         TreeNode rightChild;
         String value;
+    }
+
+    public ArrayList<String> getCheckedword() {
+        return checkedword;
+    }
+
+    public void setCheckedword(ArrayList<String> checkedword) {
+        this.checkedword = checkedword;
     }
 
     /**
@@ -188,6 +198,34 @@ public class SyntaxTree {
         return str;
     }
 
+
+    public double calculate(TreeNode node){
+        double result = 0;
+        if(node.leftChild==null&&node.rightChild==null){
+            result=Double.valueOf(node.value);
+        }
+        else{
+            double num1 = calculate(node.leftChild);
+            double num2 = calculate(node.rightChild);
+            switch (node.value){
+                case "+":
+                    result =num1 + num2;
+                    break;
+                case "-":
+                    result = num1-num2;
+                    break;
+                case "*":
+                    result = num1*num2;
+                    break;
+                case "/":
+                    result = num1/num2;
+                    break;
+            }
+        }
+        return result;
+    }
+
+
     //层序遍历二叉树
     public String levelOrder(TreeNode Node) {
         String str = "";
@@ -316,6 +354,15 @@ public class SyntaxTree {
         str+=levelOrder(root);
         str+= "-----语法树打印完成-----\n";
 
+        return str;
+    }
+
+    public String printCalculateResult(){
+        String str= "计算结果为：\t";
+        int size=this.checkedword.size();
+        String[] words = this.checkedword.toArray(new String[size]);
+        SyntaxTree.TreeNode root = createBinaryTree(words);
+        str+=calculate(root);
         return str;
     }
 
