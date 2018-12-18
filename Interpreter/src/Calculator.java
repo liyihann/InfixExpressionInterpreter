@@ -35,7 +35,7 @@ public class Calculator {
      * @param s
      * @return
      */
-    public boolean isDigit(String s) {
+    public boolean isNumber(String s) {
         if(isOperator(s))
             return false;
         return true;
@@ -80,10 +80,9 @@ public class Calculator {
         int n = infix.length;
         String str = "";
         for(int i = 0; i < n; i++){
-            if(isDigit(infix[i])){
+            if(isNumber(infix[i])){
                 if(i+1<n&&isOperator(infix[i+1])||i+1==n){// 如果一个数字的后面是运算符
                     stackZ.push(infix[i]);
-//                    stackZ.push("#");
                 }else{// 数字的情况
                     stackZ.push(infix[i]);
                 }
@@ -125,7 +124,7 @@ public class Calculator {
                 sum = operation(num1, num2, postfix[i]);
                 stackN.push(sum);
             }
-            else if(isDigit(postfix[i])){// 如果是数字
+            else if(isNumber(postfix[i])){// 如果是数字
                 stackN.push(Double.valueOf(postfix[i]));
             }
         }

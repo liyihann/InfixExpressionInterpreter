@@ -29,7 +29,7 @@ public class SyntaxTree {
         Queue<String> reversePolish = new LinkedList<String>();
         for (String s : words) {
             // 如果是数字
-            if(isDigit(s)){
+            if(isNumber(s)){
                 reversePolish.offer(s);
                 // 如果是操作符
             } else if(isOperator(s)){
@@ -87,7 +87,7 @@ public class SyntaxTree {
             TreeNode node = new TreeNode();
             node.value = s;
             // 如果是数字
-            if(isDigit(s)){
+            if(isNumber(s)){
                 nodeStack.push(node);
                 // 如果是操作符
             } else if(isOperator(s)){
@@ -126,7 +126,7 @@ public class SyntaxTree {
      * @param s
      * @return
      */
-    public boolean isDigit(String s) {
+    public boolean isNumber(String s) {
         if(isOperator(s))
             return false;
         return true;
@@ -173,11 +173,11 @@ public class SyntaxTree {
                 str+="(";
             }
             str+=printMathExpression(root.leftChild);
-            if(isDigit(root.value)&&(root.value.charAt(0)=='-'||root.value.charAt(0)=='+')){
+            if(isNumber(root.value)&&(root.value.charAt(0)=='-'||root.value.charAt(0)=='+')){
                 str+="(";
             }
             str+=root.value;
-            if(isDigit(root.value)&&(root.value.charAt(0)=='-'||root.value.charAt(0)=='+')){
+            if(isNumber(root.value)&&(root.value.charAt(0)=='-'||root.value.charAt(0)=='+')){
                 str+=")";
             }
             str+=printMathExpression(root.rightChild);
