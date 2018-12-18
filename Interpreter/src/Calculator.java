@@ -1,131 +1,144 @@
 import java.util.*;
 
 public class Calculator {
+    private ArrayList<String> checkedword;
 
-    private static Stack<Integer> stackN = new Stack<Integer>();// 数字
-    private static Stack<Character> stackF = new Stack<Character>();// 符号
-    private static Stack<Character> stackZ = new Stack<Character>();// 中间
-
-    public static char[] getCh() {
-        return ch;
+    public Calculator() {
+    }
+    public Calculator(SyntaxAnalyzer s) {
+        this.checkedword = s.getWord();
     }
 
-    public static void setCh(char[] ch) {
-        Calculator.ch = ch;
+    private Stack<Double> stackN = new Stack<Double>();// 数字
+    private Stack<String> stackF = new Stack<String>();// 符号
+    private Stack<String> stackZ = new Stack<String>();// 中间
+
+    /**
+     * 判断是否为运算符
+     *
+     * @param s
+     * @return
+     */
+    public boolean isOperator(String s) {
+        if ("(".equals(s) || ")".equals(s) || "+".equals(s) || "-".equals(s)
+                || "*".equals(s) || "/".equals(s))
+
+            return true;
+        else
+            return false;
     }
 
-    private static char [] ch;
-    private static char [] ch1;
-    private static int [] num = new int[10];
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String str = in.next();
-        ch = str.toCharArray();
-        //使用方法
-        int result = numberCalculate(convert2Postfix(ch));
-        System.out.println(result);
-        in.close();
+    /**
+     * 判断是否为数字
+     * 由于checkedword已经检查过，非operator的均为数字
+     *
+     * @param s
+     * @return
+     */
+    public boolean isDigit(String s) {
+        if(isOperator(s))
+            return false;
+        return true;
     }
 
-
-    public static int priority(char c){//优先级
-        if(c == ')'){
+    /**
+     * 获取运算符的优先级
+     *
+     * @param op
+     * @return
+     */
+    public int getPriority(String op) {
+        if(")".equals(op)){
             return 1;
-        }else if(c == '+' || c == '-'){
+        }
+        else if ("+".equals(op) || "-".equals(op)) {
             return 2;
-        }else if(c == '*' || c == '/'){
+        }
+        else if ("*".equals(op) || "/".equals(op)){
             return 3;
-        }else if(c == '('){
+        }
+        else if ("(".equals(op)){
             return 4;
         }
         return 999;
     }
 
-    public static int operation(int a, int b, char c){// 计算方法
-        if(c == '+'){
+    public double operation(double a, double b, String c){// 计算方法
+        if("+".equals(c)){
             return a + b;
-        }else if(c == '-'){
+        }else if("-".equals(c)){
             return b - a;
-        }else if(c == '*'){
+        }else if("*".equals(c)){
             return a * b;
-        }else if(c == '/' && a != 0){
+        }else if(a != 0&& "/".equals(c)){
             return b / a;
         }
-        return -1;
+        return -999;
     }
 
-    public static char[] convert2Postfix(char [] ch){
-        int n = ch.length;
+    public String[] convert2Postfix(String[] infix){
+        int n = infix.length;
         String str = "";
         for(int i = 0; i < n; i++){
-            if(ch[i] >= '0' && ch[i] <= '9'){// 数字
-                if(i + 1 < n && (ch[i+1] < '0' || ch[i+1] > '9') || i + 1 == n){// 如果一个数字的后面是运算符
-                    stackZ.push(ch[i]);
-                    stackZ.push('#');
+            if(isDigit(infix[i])){
+                if(i+1<n&&isOperator(infix[i+1])||i+1==n){// 如果一个数字的后面是运算符
+                    stackZ.push(infix[i]);
+//                    stackZ.push("#");
                 }else{// 数字的情况
-                    stackZ.push(ch[i]);
+                    stackZ.push(infix[i]);
                 }
             }else{// 运算符
-                if(stackF.isEmpty() || ch[i]=='(' || priority(ch[i]) > priority(stackF.peek())){
-                    stackF.push(ch[i]);
-                }else if(ch[i] == ')'){// 当是右括号的时候
-                    while(stackF.peek() != '('){
+                if(stackF.isEmpty() || infix[i]=="(" || getPriority(infix[i])>getPriority(stackF.peek())){
+                    stackF.push(infix[i]);
+                }else if(infix[i] == ")"){// 当是右括号的时候
+                    while(stackF.peek() != "("){
                         stackZ.push(stackF.pop());
                     }
                     stackF.pop();
                 }else{// 优先级低于栈顶运算符的时候
-                    while(!stackF.isEmpty() && priority(ch[i]) <= priority(stackF.peek()) && stackF.peek() != '('){
+                    while(!stackF.isEmpty() && getPriority(stackF.peek()) >= getPriority(infix[i]) && stackF.peek() != "("){
                         stackZ.push(stackF.pop());
                     }
-                    stackF.push(ch[i]);
+                    stackF.push(infix[i]);
                 }
             }
         }
         while(!stackF.isEmpty()){
             stackZ.push(stackF.pop());
         }
+        ArrayList<String> post = new ArrayList<String>();
         while(!stackZ.isEmpty()){
-            str += stackZ.pop()+"";
+            post.add(stackZ.pop());
         }
-        ch1 = str.toCharArray();
-        int a = ch1.length;
-        for(int i = 0; i < a/2; i++){//  ch1反转
-            char t;
-            t = ch1[i];
-            ch1[i] = ch1[a-1-i];
-            ch1[a-1-i] = t;
-        }
-        return ch1;
+        Collections.reverse(post);
+        String[] postfix = post.toArray(new String[post.size()]);
+        return postfix;
     }
 
-
-    public static int numberCalculate(char [] ch){// 计算后缀表达式
-        int n = ch.length;
-        int sum = 0;
-        int k = 0;
-        int tmp = 0;
+    public double numberCalculate(String[] postfix){// 计算后缀表达式
+        int n = postfix.length;
+        double sum = 0;
         for(int i = 0; i < n; i++){
-            if(ch[i] == '#'){
-                continue;
-            }else if(ch[i] == '+' || ch[i] == '-' || ch[i] == '*' || ch[i] == '/'){// 如果是运算符，则弹出连个数字进行运算
-                sum = operation(stackN.pop(), stackN.pop(), ch[i]);
+            if("+".equals(postfix[i]) || "-".equals(postfix[i]) || "*".equals(postfix[i]) || "/".equals(postfix[i])){// 如果是运算符，则弹出连个数字进行运算
+                double num1 = stackN.pop();
+                double num2 = stackN.pop();
+                sum = operation(num1, num2, postfix[i]);
                 stackN.push(sum);
-            }else{// 如果是数字
-                if(ch[i+1] == '#'){// 如果下一个是‘#’
-                    num[k++] = ch[i] - '0';
-                    for(int j = 0; j < k; j++){
-                        tmp += (num[j] * (int)Math.pow(10, k-j-1));
-                    }
-                    stackN.push(tmp);
-                    tmp = 0;
-                    k = 0;
-                }else{// 下一个元素是数字
-                    num[k++] = ch[i] - '0';
-                }
+            }
+            else if(isDigit(postfix[i])){// 如果是数字
+                stackN.push(Double.valueOf(postfix[i]));
             }
         }
         return stackN.peek();
+    }
+
+    public String printCalculateResult(){
+        String str = "计算结果为：\t";
+        int size=this.checkedword.size();
+        String[] words = this.checkedword.toArray(new String[size]);
+        String[] post = convert2Postfix(words);
+        str += numberCalculate(post);
+        return str;
     }
 }
 

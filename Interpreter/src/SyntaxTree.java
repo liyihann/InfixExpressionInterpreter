@@ -23,24 +23,18 @@ public class SyntaxTree {
      * @return 二叉树的根节点
      */
     public TreeNode createBinaryTree(String[] words) {
-
         // 存储操作数的栈
         Stack<String> opStack = new Stack<String>();
         // 存储转换后的逆波兰式的队列
         Queue<String> reversePolish = new LinkedList<String>();
-
         for (String s : words) {
-
             // 如果是数字
             if(isDigit(s)){
-
                 reversePolish.offer(s);
                 // 如果是操作符
             } else if(isOperator(s)){
-
                 //是左括号直接入栈
                 if("(".equals(s)){
-
                     opStack.push(s);
                     // 如果是右括号
                 } else if(")".equals(s)){
@@ -53,9 +47,7 @@ public class SyntaxTree {
 
                             opStack.pop();
                             break;
-
                         } else{
-
                             reversePolish.offer(opStack.pop());
                         }
                     }
@@ -64,7 +56,6 @@ public class SyntaxTree {
                     while(!opStack.isEmpty()){
                         // 如果栈顶元素为"("直接入栈
                         if("(".equals(opStack.peek())){
-
                             opStack.push(s);
                             break;
                             //如果栈顶元素优先级大于s
@@ -80,37 +71,31 @@ public class SyntaxTree {
                     }
                     // 如果栈为空，直接入栈
                     if(opStack.isEmpty())
-
                         opStack.push(s);
                 }
             }
         }
         // 将剩余的操作符入队
         while(!opStack.isEmpty()){
-
             reversePolish.offer(opStack.pop());
         }
         Stack<TreeNode> nodeStack = new Stack<TreeNode>();
         // 将逆波兰式转化成二叉树
         while(!reversePolish.isEmpty()){
-
             String s = reversePolish.poll();
             // 以当前的元素的值新建一个节点
             TreeNode node = new TreeNode();
             node.value = s;
             // 如果是数字
             if(isDigit(s)){
-
                 nodeStack.push(node);
                 // 如果是操作符
             } else if(isOperator(s)){
-
                 //从栈里弹出两个节点作为当前节点的左右子节点
                 TreeNode rightNode = nodeStack.pop();
                 TreeNode leftNode = nodeStack.pop();
                 node.leftChild = leftNode;
                 node.rightChild = rightNode;
-
                 // 入栈
                 nodeStack.push(node);
             }
@@ -126,14 +111,11 @@ public class SyntaxTree {
      * @return
      */
     public boolean isOperator(String s) {
-
         if ("(".equals(s) || ")".equals(s) || "+".equals(s) || "-".equals(s)
                 || "*".equals(s) || "/".equals(s)||"%".equals(s)||"^".equals(s))
 
             return true;
-
         else
-
             return false;
     }
 
@@ -145,10 +127,8 @@ public class SyntaxTree {
      * @return
      */
     public boolean isDigit(String s) {
-
         if(isOperator(s))
             return false;
-
         return true;
     }
 

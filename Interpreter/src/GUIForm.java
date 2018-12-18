@@ -63,11 +63,12 @@ public class GUIForm {
                             result+="\n【提示：语法分析错误，无法计算。请检查输入。】\n";
                         }else{
                             try{
-                                Calculator p = new Calculator();
-                                p.setCh(str.toCharArray());
-                                result+="计算结果为:";
-                                result+= p.numberCalculate(p.convert2Postfix(p.getCh()));
-
+//                                Calculator p = new Calculator();
+//                                p.setCh(str.toCharArray());
+//                                result+="计算结果为:";
+//                                result+= p.numberCalculate(p.convert2Postfix(p.getCh()));
+                                Calculator p = new Calculator(s);
+                                result += p.printCalculateResult();
                             }catch (Exception ex){
                                 ex.printStackTrace();
                                 result+="\n【提示：计算异常，请查看分析结果。请检查输入】\n";
