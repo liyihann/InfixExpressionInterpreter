@@ -33,7 +33,7 @@ public class SyntaxTree {
      * @return 二叉树的根节点
      */
     public TreeNode createBinaryTree(String[] words) {
-        // 存储操作数的栈
+        // 存储操作符的栈
         Stack<String> opStack = new Stack<String>();
         // 存储转换后的逆波兰式的队列
         Queue<String> reversePolish = new LinkedList<String>();
@@ -365,6 +365,4 @@ public class SyntaxTree {
         str+=calculate(root);
         return str;
     }
-
-
 }

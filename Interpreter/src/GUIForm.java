@@ -25,7 +25,7 @@ public class GUIForm {
     private JButton button6;
     private JButton a0Button;
     private JButton a00Button;
-    private JButton a4Button;
+    private JButton  a4Button;
     private JButton a5Button;
     private JButton a6Button;
     private JButton button12;
@@ -68,7 +68,7 @@ public class GUIForm {
                             }
                             catch (Exception ex){
                                 ex.printStackTrace();
-                                result+="\n【提示：计算异常，请查看分析结果。请检查输入】\n";
+                                result+="\n【提示：计算异常，请查看分析结果。请检查输入。】\n";
                             }
 
                         }
@@ -76,7 +76,7 @@ public class GUIForm {
                     textArea2.setText(result);
                 }
                 else {
-                    textArea2.setText("【提示：输入为空】\n");
+                    textArea2.setText("【提示：输入为空。】\n");
                 }
 
             }
@@ -104,7 +104,7 @@ public class GUIForm {
                     textArea2.setText(result);
                 }
                 else{
-                    textArea2.setText("【提示：输入为空】\n");
+                    textArea2.setText("【提示：输入为空。】\n");
                 }
 
             }
@@ -136,7 +136,7 @@ public class GUIForm {
                                 result+=t.printSyntaxTree();
                             }catch (Exception ex){
                                 ex.printStackTrace();
-                                result+="\n【提示：语法分析错误，无法打印语法树。请检查输入】\n";
+                                result+="\n【提示：语法分析错误，无法打印语法树。请检查输入。】\n";
                             }
 
                         }
@@ -144,7 +144,7 @@ public class GUIForm {
                     textArea2.setText(result);
                 }
                 else{
-                    textArea2.setText("【提示：输入为空】\n");
+                    textArea2.setText("【提示：输入为空。】\n");
                 }
             }
         });

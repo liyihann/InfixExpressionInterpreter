@@ -49,10 +49,10 @@ public class SyntaxAnalyzer {
         T();
         while(symbol==5||symbol==6){
             if(symbol==5){
-                syntaxAnalysis+="\nE->E+T";
+                syntaxAnalysis+="\nE->T+T";
             }
             if(symbol==6){
-                syntaxAnalysis+="\nE->E-T";
+                syntaxAnalysis+="\nE->T-T";
             }
             Next();
             T();
@@ -65,10 +65,10 @@ public class SyntaxAnalyzer {
         F();
         while(symbol==7||symbol==8){
             if(symbol==7){
-                syntaxAnalysis+="\nT->T*F";
+                syntaxAnalysis+="\nT->F*F";
             }
             if(symbol==8){
-                syntaxAnalysis+="\nT->T/F";
+                syntaxAnalysis+="\nT->F/F";
             }
             Next();
             F();
@@ -79,7 +79,7 @@ public class SyntaxAnalyzer {
         if(symbol==1||symbol==2){
             syntaxAnalysis+="\nF->d:"+this.word.get(idex-1);
             if(idex<this.value.size()){
-                syntaxAnalysis+="\n向后一个操作数移动";
+                syntaxAnalysis+="\n匹配终结符d";
             }
             else{
                 syntaxAnalysis+="\n读取完毕";
